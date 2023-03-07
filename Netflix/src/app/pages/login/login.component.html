@@ -2,7 +2,7 @@
 
 <div class="cardLogin">
     <div class="login">
-      <form class="form">
+      <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit" >
         <div class="form-group">
             <label>E-mail:</label>
             <input placeholder="e-mail" type="email" formControlName="email">
@@ -12,7 +12,7 @@
             <input placeholder="senha" type="password" formControlName="password">
         </div>
     
-        <button routerLink="/serie" >Cadastrar</button>
+        <button type="submit" routerLink="/serie" >Cadastrar</button>
     </form>
   
     </div>

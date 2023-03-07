@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() {}
+  loginForm!: FormGroup;
 
-  ngOnInit() {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
-  onSubmit() {}
+  ngOnInit() {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    })
+  }
+
+  onSubmit() {
+    const email = this.loginForm.get('email')?.value;
+    const password = this.loginForm.get('password')?.value;
+
+    if(email === 'mariana@gmail.com' && password === '1234'){
+      localStorage.setItem('logado', 'true');
+      this.router.navigate(['/serie']);
+    } else {
+      alert('Erro!');
+    }
+  }
 }
