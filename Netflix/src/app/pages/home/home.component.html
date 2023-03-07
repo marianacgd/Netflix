@@ -1,3 +1,17 @@
 <app-menu></app-menu>
 
-<p>home works!</p>
+<p>Texto</p>
+
+<p>Cadastre-se</p>
+<form class="form">
+    <div class="form-group">
+        <label>E-mail:</label>
+        <input placeholder="e-mail" type="email" formControlName="email">
+    </div>
+    <div class="form-group">
+        <label>Senha:</label>
+        <input placeholder="senha" type="password" formControlName="password">
+    </div>
+
+    <button type="submit" routerLink="/login" >Cadastrar</button>
+</form>

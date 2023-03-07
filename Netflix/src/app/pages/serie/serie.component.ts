@@ -9,16 +9,10 @@ import { Router } from '@angular/router';
 })
 export class SerieComponent implements OnInit {
 
-  eps = []
-
   constructor(private router: Router) {}
 
   ngOnInit(): void {
     
   }
 
-  recebeEvento(event: any){
-    console.log("Recebeu Evento!")
-    console.log(event)
-  }
 }

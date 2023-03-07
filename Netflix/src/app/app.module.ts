@@ -8,6 +8,9 @@ import { CardSerieComponent } from './components/card-serie/card-serie.component
 import { SerieComponent } from './pages/serie/serie.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './pages/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FullComponent } from './layouts/full/full.component';
+import { ContentComponent } from './layouts/content/content.component';
 
 
 @NgModule({
@@ -18,10 +21,14 @@ import { LoginComponent } from './pages/login/login.component';
     SerieComponent,
     MenuComponent,
     LoginComponent,
+    FullComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
