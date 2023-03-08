@@ -1,30 +1,51 @@
-
 <div class="main">
-    <app-menu></app-menu>
-    <div class="containerCard">
-      <h1 class="title">Filmes, séries e muito mais. Sem limites.</h1>
-      <h3 class="subtitle">Assista onde quiser. Cancele quando quiser.</h3>
-      <div class="cardForm">
-        <h6>Pronto para assistir? Informe seu email para criar ou reiniciar sua assinatura.</h6>
-        <form class="subform">
-          <input type="email" placeholder="Email" name="email" [(ngModel)]="inputEmail">
-          <button type="submit" class="btn btn-danger">Vamos lá </button>
-  
-        </form>
-      </div>
+  <app-menu></app-menu>
+  <div class="containerCard">
+    <h1 class="title">Filmes, séries e muito mais. Sem limites.</h1>
+    <h3 class="subtitle">Assista onde quiser. Cancele quando quiser.</h3>
+    <div class="cardForm">
+      <h6>
+        Pronto para assistir? Informe seus dados para criar a sua assinatura.
+      </h6>
+      <form class="form">
+        <div class="form-group">
+          <input
+            type="email"
+            placeholder="Email"
+            name="email"
+            [(ngModel)]="inputEmail"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="nome"
+            placeholder="Nome"
+            name="nome"
+            [(ngModel)]="inputNome"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            placeholder="senha"
+            type="password"
+            formControlName="password"
+          />
+        </div>
+        <button type="submit" class="btn btn-danger">Vamos lá</button>
+      </form>
     </div>
   </div>
+</div>
 
-<p>Cadastre-se</p>
 <form class="form">
-    <div class="form-group">
-        <label>E-mail:</label>
-        <input placeholder="e-mail" type="email" formControlName="email">
-    </div>
-    <div class="form-group">
-        <label>Senha:</label>
-        <input placeholder="senha" type="password" formControlName="password">
-    </div>
+  <div class="form-group">
+    <label>E-mail:</label>
+    <input placeholder="e-mail" type="email" formControlName="email" />
+  </div>
+  <div class="form-group">
+    <label>Senha:</label>
+    <input placeholder="senha" type="password" formControlName="password" />
+  </div>
 
-    <button type="submit" routerLink="/login" >Cadastrar</button>
+  <button type="submit" routerLink="/login">Cadastrar</button>
 </form>

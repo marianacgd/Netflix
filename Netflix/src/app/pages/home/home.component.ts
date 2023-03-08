@@ -12,12 +12,10 @@ export class HomeComponent implements OnInit {
     duracao: '240min',
   }; */
 
-  inputEmail: any = "";
+  inputEmail: any = '';
+  inputNome: any = '';
 
-  constructor(private router: Router){}
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-    
-  }
-
+  ngOnInit(): void {}
 }
