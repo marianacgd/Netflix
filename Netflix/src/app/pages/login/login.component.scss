@@ -1,0 +1,13 @@
+.main{
+  height: 100vh;
+    background-image:
+    linear-gradient(to top,rgba(0, 0, 0, 0.829) 0,rgba(0, 0, 0, 0.493) 40%,rgba(0, 0, 0, 0.486) 75%,rgba(17, 17, 17, 0.897) 100%),
+    url('../../../assets/images/BR-pt-20230227-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+    background-size: 100% ;
+    background-size: cover;
+}
+
+.custom-background{
+  background-color: grayscale($color: rgba(17, 17, 17, 0.897));
+  border-radius: 5px;
+}
