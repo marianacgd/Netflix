@@ -1,5 +1,4 @@
 <div class="main">
-  <app-menu></app-menu>
   <div class="containerCard">
     <h1 class="title">Filmes, séries e muito mais. Sem limites.</h1>
     <h3 class="subtitle">Assista onde quiser. Cancele quando quiser.</h3>
@@ -8,44 +7,28 @@
         Pronto para assistir? Informe seus dados para criar a sua assinatura.
       </h6>
       <form class="form">
-        <div class="form-group">
+        <div class="form-group" [formGroup]="myGroup">
           <input
             type="email"
             placeholder="Email"
-            name="email"
-            [(ngModel)]="inputEmail"
+            formControlName="email"
+            [(ngModel)]="email"
           />
-        </div>
-        <div class="form-group">
           <input
             type="nome"
             placeholder="Nome"
-            name="nome"
-            [(ngModel)]="inputNome"
+            formControlName="nome"
+            [(ngModel)]="nome"
           />
-        </div>
-        <div class="form-group">
           <input
             placeholder="senha"
             type="password"
             formControlName="password"
+            [(ngModel)]="password"
           />
         </div>
-        <button type="submit" class="btn btn-danger">Vamos lá</button>
+        <button type="submit" class="btn btn-danger" (click)="onCadastrar()" routerLink="/login">Cadastrar</button>
       </form>
     </div>
   </div>
 </div>
-
-<form class="form">
-  <div class="form-group">
-    <label>E-mail:</label>
-    <input placeholder="e-mail" type="email" formControlName="email" />
-  </div>
-  <div class="form-group">
-    <label>Senha:</label>
-    <input placeholder="senha" type="password" formControlName="password" />
-  </div>
-
-  <button type="submit" routerLink="/login">Cadastrar</button>
-</form>

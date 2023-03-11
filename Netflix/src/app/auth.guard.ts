@@ -22,11 +22,11 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    //const usuarioLogado = localStorage.getItem;
-    //if (usuarioLogado) {
-    //  return true;
-    //}
-    //this.router.navigate(['/login']);
+    const usuarioLogado = localStorage.getItem('logado') || 'false';
+    if (usuarioLogado === 'true') {
+     return true;
+    }
+    this.router.navigate(['/login']);
     return false;
   }
 }

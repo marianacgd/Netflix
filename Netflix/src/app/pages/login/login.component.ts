@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 
@@ -10,24 +10,31 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  loginForm!: FormGroup;
+  formLogin!: FormGroup;
+
+  emailLogin: any = '';
+  passwordLogin: any = '';
+  email: any = '';
+  password: any = '';
 
   constructor(private fb: FormBuilder, private router: Router) {}
 
   ngOnInit() {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+    this.formLogin = this.fb.group({
+      emailLogin: ['', [Validators.required, Validators.email]],
+      passwordLogin: ['', Validators.required]
     })
   }
 
-  onSubmit() {
-    const email = this.loginForm.get('email')?.value;
-    const password = this.loginForm.get('password')?.value;
+  onLogar() {
+    
+    const storage = window.localStorage;
+    const emailStorage = storage.getItem('email');
+    const passwordStorage = storage.getItem('password');
 
-    if(email === 'mariana@gmail.com' && password === '1234'){
+    if(this.emailLogin === emailStorage && this.passwordLogin === passwordStorage){
       localStorage.setItem('logado', 'true');
-      this.router.navigate(['/serie']);
+      this.router.navigate(['/serie'])
     } else {
       alert('Erro!');
     }

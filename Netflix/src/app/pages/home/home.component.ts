@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,15 +8,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  /* serie: ISerie = {
-    nome: 'Friends',
-    duracao: '240min',
-  }; */
 
-  inputEmail: any = '';
-  inputNome: any = '';
+  myGroup!: FormGroup;
 
-  constructor(private router: Router) {}
+  email: any = '';
+  nome: any = '';
+  password: any = '';
 
-  ngOnInit(): void {}
+
+  constructor(private fb: FormBuilder ,private router: Router) {}
+
+  ngOnInit() {
+    this.myGroup = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      nome: ['', [Validators.required]],
+      password: ['', Validators.required]
+  });
+
+  }
+
+  onCadastrar(){
+    const storage = window.localStorage;
+    storage.setItem("email", this.email);
+    storage.setItem("nome", this.nome);
+    storage.setItem("password", this.password);
+  }
 }
