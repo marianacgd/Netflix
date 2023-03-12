@@ -14,13 +14,16 @@ const routes: Routes = [
     component: FullComponent,
     children: [
       { path: 'home', component: HomeComponent },
-      { path: 'serie', component: SerieComponent, canActivate: [AuthGuard] },
+      
     ],
   },
   {
     path: '',
     component: ContentComponent,
-    children: [{ path: 'login', component: LoginComponent }],
+    children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'serie', component: SerieComponent, canActivate: [AuthGuard] },
+    ],
   },
   { path: '**', redirectTo: 'home' },
 ];

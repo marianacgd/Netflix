@@ -8,26 +8,30 @@
       </h6>
       <form class="form">
         <div class="form-group" [formGroup]="myGroup">
+          
           <input
             type="email"
             placeholder="Email"
             formControlName="email"
             [(ngModel)]="email"
           />
-          <input
-            type="nome"
-            placeholder="Nome"
-            formControlName="nome"
-            [(ngModel)]="nome"
-          />
-          <input
-            placeholder="senha"
-            type="password"
-            formControlName="password"
-            [(ngModel)]="password"
-          />
-        </div>
+  
+            <input
+              type="nome"
+              placeholder="Nome"
+              formControlName="nome"
+              [(ngModel)]="nome"
+            />
+          
+            <input
+              placeholder="Senha"
+              type="password"
+              formControlName="password"
+              [(ngModel)]="password"
+            />
+           
         <button type="submit" class="btn btn-danger" (click)="onCadastrar()" routerLink="/login">Cadastrar</button>
+       </div>
       </form>
     </div>
   </div>

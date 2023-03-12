@@ -11,10 +11,11 @@ div{
 //     background-size: cover;
 // }
 
+
 .containerCard{
     width: center;
-    text-align: center;
-    margin-top: 160px;
+    text-align:center;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -35,6 +36,14 @@ div{
     display: flex;
     align-items: center;
 }
+
+.form-group{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
 h1{
   padding: 5px;
     font-weight:bold;
@@ -51,7 +60,7 @@ button{
     padding: 10px;
     background-color: #e50914;;
     color: white;
-    width: 200px;
+    width: 160px;
     font-weight: 400;
     vertical-align: middle;
     letter-spacing: .1px;
@@ -62,6 +71,7 @@ button{
 input{
     border-radius: 2px;
     padding: 10px;
+    width: 300px;
     appearance: none;
     border: none;
 }

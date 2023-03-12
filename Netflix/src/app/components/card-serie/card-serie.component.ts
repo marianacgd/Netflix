@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardSerieComponent implements OnInit {
 
-  @Input('episodios') epsList = [];
+  @Input() public serie: any = {};
 
 
   constructor(){}

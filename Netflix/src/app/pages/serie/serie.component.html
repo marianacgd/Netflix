@@ -1,6 +1,7 @@
 <div class="main">
 
-<p>serie works!</p>
+  <div class="lista">
+    <app-card-serie *ngFor="let item of series" [serie]="item"></app-card-serie>
+  </div>
 
-<app-card-serie></app-card-serie>
 </div>
